@@ -4,43 +4,68 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hồ Tấn Huy — Blog & Portfolio</title>
-  <meta name="description" content="Hồ Tấn Huy — Sinh viên Công nghệ thông tin, chia sẻ dự án, bài viết và tài nguyên lập trình." />
+  <meta name="description" content="Hồ Tấn Huy — Sinh viên CNTT, chia sẻ dự án, bài viết và tài nguyên lập trình." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0b1220;--card:#0f1724;--accent:#00bcd4;--accent2:#8b5cf6;--muted:rgba(255,255,255,0.65);--glass:rgba(255,255,255,0.03)}
+    :root{--bg:#f6f8fb;--primary:#0ea5a4;--accent:#7c3aed;--muted:#6b7280}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, system-ui, Arial;background:linear-gradient(180deg,var(--bg),#071026);color:#eaf6ff}
-    a{color:inherit;text-decoration:none}
-    header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+    body{margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1220}
+
+    /* top contact strip */
+    .top-strip{background:#fff;padding:8px 0;border-bottom:1px solid #eef2f7}
+    .top-strip .wrap{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:6px}
+    .contact-small{font-size:13px;color:var(--muted)}
+
+    header{background:#fff;box-shadow:0 6px 18px rgba(15,23,42,0.04);position:sticky;top:0;z-index:40}
     .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#031226}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;color:#ffffff}
     nav ul{display:flex;gap:14px;align-items:center;list-style:none;margin:0;padding:0}
-    nav a{padding:8px 12px;border-radius:8px;font-size:14px}
-    .hero{max-width:1100px;margin:28px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:20px}
-    .hero-left{flex:1}
-    h1{margin:0;font-size:28px}
-    .lead{margin-top:8px;color:var(--muted)}
-    .cta{margin-top:12px}
-    .btn{background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;padding:10px 14px;border-radius:10px;color:#041029;font-weight:600;cursor:pointer}
+    nav a{padding:8px 12px;border-radius:8px;font-size:14px;color:var(--muted)}
+    .book-btn{background:linear-gradient(90deg,var(--primary),var(--accent));color:#021014;padding:8px 12px;border-radius:10px;font-weight:600;border:none;cursor:pointer}
 
+    /* hero */
+    .hero{max-width:1100px;margin:22px auto;padding:28px;background:linear-gradient(180deg,#ffffff, #fbfdff);border-radius:12px;display:flex;gap:24px;align-items:center}
+    .hero .left{flex:1}
+    .hero h1{margin:0;font-size:34px;line-height:1.02}
+    .subtitle{color:var(--muted);margin-top:8px}
+    .cta{margin-top:16px}
+    .cta .btn{background:linear-gradient(90deg,var(--primary),var(--accent));color:#021014;padding:10px 16px;border-radius:10px;border:none;font-weight:600}
+    .hero .right{width:260px}
+    .hero .avatar{width:100%;height:220px;border-radius:12px;background-image:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(14,165,164,0.08));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+
+    /* layout */
     .layout{max-width:1100px;margin:18px auto;display:grid;grid-template-columns:1fr 320px;gap:18px}
-    .post{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .post{background:#fff;padding:18px;border-radius:12px;border:1px solid #eef2f7}
     .post-list{display:grid;gap:12px}
     .post-card{display:flex;gap:12px;align-items:flex-start}
-    .thumb{width:120px;height:78px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));flex:0 0 120px}
+    .thumb{width:140px;height:92px;border-radius:8px;background:#eef3f7;flex:0 0 140px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
     .meta{font-size:13px;color:var(--muted)}
     .title{font-weight:600;margin:6px 0}
 
-    aside .card{padding:14px}
+    aside .card{padding:14px;background:#fff;border-radius:12px;border:1px solid #eef2f7}
     .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{padding:8px 10px;border-radius:999px;background:var(--glass);font-size:13px}
+    .tag{padding:8px 10px;border-radius:999px;background:#f3f5f9;font-size:13px;color:var(--muted)}
 
     footer{max-width:1100px;margin:28px auto;color:var(--muted);text-align:center;padding:12px}
 
-    @media(max-width:880px){.layout{grid-template-columns:1fr;padding:12px}.hero{flex-direction:column}.thumb{width:100%;height:160px}}
+    @media(max-width:880px){
+      .layout{grid-template-columns:1fr;padding:12px}
+      .hero{flex-direction:column;align-items:stretch}
+      .hero .right{width:100%}
+      .thumb{width:100%;height:160px}
+      .post-card{flex-direction:column}
+    }
   </style>
 </head>
 <body>
+  <div class="top-strip">
+    <div class="wrap">
+      <div class="contact-small">0927013848 • nguyenanhtu.k16@stu.upt.edu.vn</div>
+      <div><a href="https://zalo.me" target="_blank" style="font-size:13px;color:var(--muted);">Đặt lịch • zalo.me</a></div>
+    </div>
+  </div>
+
   <header>
     <div class="nav">
       <div class="brand">
@@ -53,9 +78,10 @@
       <nav>
         <ul>
           <li><a href="#">Trang chủ</a></li>
+          <li><a href="#about">Giới thiệu</a></li>
           <li><a href="#posts">Bài viết</a></li>
-          <li><a href="#projects">Dự án</a></li>
           <li><a href="#contact">Liên hệ</a></li>
+          <li><button class="book-btn" onclick="window.open('https://zalo.me','_blank')">Đặt lịch</button></li>
         </ul>
       </nav>
     </div>
@@ -63,18 +89,13 @@
 
   <main>
     <section class="hero">
-      <div class="hero-left">
-        <h1>Xin chào, tôi là <span style="background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent;">Hồ Tấn Huy</span></h1>
-        <p class="lead">Sinh viên Công nghệ thông tin tại Đại học Phan Thiết. Chia sẻ dự án, bài viết về phát triển web, tự động hoá và các công cụ lập trình.</p>
-        <div class="cta">
-          <a href="#projects" class="btn">Xem dự án</a>
-        </div>
+      <div class="left">
+        <h1>Hồ Tấn Huy</h1>
+        <div class="subtitle">Sinh viên Công nghệ thông tin — Đại học Phan Thiết<br>Chia sẻ dự án, bài viết về phát triển web, tự động hoá và công nghệ.</div>
+        <div class="cta"><a href="#posts" class="btn">Tìm hiểu thêm</a></div>
       </div>
-      <div style="width:260px;text-align:right">
-        <div style="background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)">
-          <div style="font-weight:700">Thông tin</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:8px">Đang học: Đại học Phan Thiết<br>Ngành: Công nghệ thông tin</div>
-        </div>
+      <div class="right">
+        <div class="avatar">Ảnh đại diện / Banner (bạn có thể thay bằng ảnh thật)</div>
       </div>
     </section>
 
@@ -84,16 +105,16 @@
           <h2 style="margin-top:0">Bài viết gần đây</h2>
           <div class="post-list">
             <article class="post-card">
-              <div class="thumb"></div>
+              <div class="thumb">Hình bài 1</div>
               <div>
-                <div class="meta">25/08/2025 • 1.1K lượt xem</div>
+                <div class="meta">15/07/2025 • 1.2K lượt xem</div>
                 <div class="title">Tự động hóa test với Selenium và ADB — Hướng dẫn cơ bản</div>
                 <div style="color:var(--muted);font-size:14px">Hướng dẫn cách thiết lập môi trường, viết script C# kết hợp Selenium và ADB để tự động hoá tương tác trên thiết bị Android.</div>
               </div>
             </article>
 
             <article class="post-card">
-              <div class="thumb"></div>
+              <div class="thumb">Hình bài 2</div>
               <div>
                 <div class="meta">10/07/2025 • 980 lượt xem</div>
                 <div class="title">Xây dựng website portfolio dễ dàng với HTML/CSS</div>
@@ -102,7 +123,7 @@
             </article>
 
             <article class="post-card">
-              <div class="thumb"></div>
+              <div class="thumb">Hình bài 3</div>
               <div>
                 <div class="meta">05/07/2025 • 2.1K lượt xem</div>
                 <div class="title">Dự án: Ứng dụng tự động click — Ý tưởng và bảo mật</div>
@@ -115,15 +136,14 @@
         <div id="projects" class="post" style="margin-top:14px">
           <h2 style="margin-top:0">Dự án tiêu biểu</h2>
           <div style="display:grid;gap:10px">
-            <div style="padding:12px;background:var(--card);border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+            <div style="padding:12px;background:#fff;border-radius:10px;border:1px solid #eef2f7">
               <div style="font-weight:700">GoLike Automation (demo)</div>
               <div style="font-size:13px;color:var(--muted);margin-top:6px">Tool tự động hóa tương tác trên TikTok bằng Selenium + ADB. (Dự án cá nhân)</div>
             </div>
 
-            <div style="padding:12px;background:var(--card);border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+            <div style="padding:12px;background:#fff;border-radius:10px;border:1px solid #eef2f7">
               <div style="font-weight:700">Portfolio cá nhân</div>
-              <div style="font-size:13px;color:var(--muted);margin-top:6px">Website giới thiệu bản thân, blog và showcase dự án.
-              </div>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Website giới thiệu bản thân, blog và showcase dự án.</div>
             </div>
           </div>
         </div>
@@ -149,7 +169,7 @@
         <div class="card" style="margin-top:12px">
           <h4 style="margin:0 0 8px 0">Đăng ký nhận bài</h4>
           <form onsubmit="event.preventDefault(); alert('Cảm ơn! Mình sẽ gửi cập nhật.');">
-            <input type="email" placeholder="Email của bạn" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6ff" required>
+            <input type="email" placeholder="Email của bạn" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef2f7;background:transparent;color:#0b1220" required>
             <button class="btn" style="width:100%;margin-top:8px">Đăng ký</button>
           </form>
         </div>
