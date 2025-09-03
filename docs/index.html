@@ -1,154 +1,344 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hồ Tấn Huy — IT Portfolio</title>
-  <style>
-    :root{
-      --bg1:#0f172a;
-      --bg2:#07102a;
-      --accent:#00f5ff;
-      --accent2:#7c3aed;
-      --glass: rgba(255,255,255,0.06);
-      --text: #e6eef8;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: radial-gradient(ellipse at 10% 10%, rgba(124,58,237,0.12), transparent 10%), linear-gradient(120deg,var(--bg1),var(--bg2)); color:var(--text);}
-    .container{max-width:1100px;margin:40px auto;padding:28px}
-
-    /* Card */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:20px; padding:28px; box-shadow:0 8px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); backdrop-filter: blur(8px);}
-
-    /* Header / hero */
-    .hero{display:flex;gap:20px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:16px;flex:0 0 120px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:34px;color:#021028;box-shadow:0 6px 30px rgba(124,58,237,0.18);}
-    .info{flex:1}
-    h1{margin:0;font-size:28px;letter-spacing:0.6px}
-    .role{margin-top:6px;color:rgba(230,238,248,0.7);}
-
-    /* Neon blinking name */
-    .neon{display:inline-block;padding:6px 12px;border-radius:8px;position:relative}
-    .neon::before{content:'';position:absolute;inset:0;border-radius:8px;filter:blur(14px);opacity:0.6;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:-1;animation:glow 2.8s linear infinite}
-    @keyframes glow{0%{opacity:0.35;transform:scale(0.98)}50%{opacity:1;transform:scale(1.02)}100%{opacity:0.35;transform:scale(0.98)}}
-
-    /* Blinking cursor & subtitle typing */
-    .subtitle{margin-top:12px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;color:#cfeffd}
-    .blink {display:inline-block; width:10px; height:20px; margin-left:6px; background:var(--text); animation:blink 1s steps(2) infinite; vertical-align:middle;}
-    @keyframes blink {50%{opacity:0}}
-
-    /* Sections */
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:22px}
-    .panel{padding:18px;background:var(--glass);border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .section-title{font-weight:600;margin-bottom:12px}
-    ul{margin:0;padding-left:18px}
-
-    /* Education/skills list */
-    .skill{display:inline-block;margin:6px 6px 6px 0;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-size:13px}
-
-    /* Footer */
-    .footer{margin-top:18px;text-align:center;color:rgba(230,238,248,0.6);font-size:13px}
-
-    /* Small screens */
-    @media (max-width:880px){.grid{grid-template-columns:1fr}.avatar{width:96px;height:96px;font-size:26px}.container{margin:18px;padding:18px}}
-
-    /* Subtle animated grid background lines */
-    .bg-lines{position:fixed;inset:0;pointer-events:none;opacity:0.06;background-image:linear-gradient(transparent 0px, rgba(255,255,255,0.02) 1px), linear-gradient(90deg, transparent 0px, rgba(255,255,255,0.02) 1px); background-size:120px 120px,120px 120px;}
-
-    /* Floating action */
-    .contact-btn{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#021028;font-weight:600;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(2,6,23,0.5);}
-
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Tấn Huy- Lập trình viên </title>
+    <meta name="description" content="Website giới thiệu về Huy Cyber ">
+    <meta name="keywords" content="Hồ Tấn Huy, Huy cyber, Lập trình viên ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tanhuy1.id.vn/">
+    <link rel="icon" type="image/png" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Pattaya&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="bg-lines"></div>
-  <div class="container">
-    <div class="card">
-      <div class="hero">
-        <div class="avatar">HT</div>
-        <div class="info">
-          <h1><span class="neon">HỒ TẤN HUY</span></h1>
-          <div class="role">Sinh viên Công nghệ thông tin — Đại học Phan Thiết</div>
-          <div class="subtitle" id="subtitle">Chuyên ngành: <span id="typed">Phát triển phần mềm & Web</span><span class="blink" aria-hidden="true"></span></div>
-        </div>
-        <div style="flex:0 0 160px;text-align:right">
-          <button class="contact-btn" onclick="copyEmail()">📧 Liên hệ</button>
-          <div style="font-size:12px;color:rgba(230,238,248,0.6);margin-top:8px">Đang học: Đại học Phan Thiết</div>
-        </div>
-      </div>
 
-      <div class="grid">
-        <div>
-          <div class="panel">
-            <div class="section-title">Giới thiệu ngắn</div>
-            <p>Xin chào — tôi là Hồ Tấn Huy, sinh viên ngành Công nghệ thông tin tại Đại học Phan Thiết. Tôi đam mê phát triển web, tự động hóa và tối ưu hóa trải nghiệm người dùng. Tôi thích học hỏi công nghệ mới và xây dựng sản phẩm thực tế.</p>
-            <hr style="opacity:0.06;margin:12px 0">
-            <div class="section-title">Kinh nghiệm & Dự án</div>
-            <ul>
-              <li>Thực hiện các dự án web cá nhân (HTML/CSS/JS, React cơ bản)</li>
-              <li>Tự động hóa test bằng Selenium và ADB (dự án cá nhân)</li>
-              <li>Hiện đang học sâu về backend và DevOps cơ bản</li>
-            </ul>
-          </div>
-
-          <div class="panel" style="margin-top:12px">
-            <div class="section-title">Mục tiêu</div>
-            <p>Phát triển kỹ năng lập trình, tham gia vào các dự án mã nguồn mở, và xây dựng portfolio để xin thực tập tại các công ty công nghệ trong và ngoài nước.</p>
-          </div>
-        </div>
-
-        <aside>
-          <div class="panel">
-            <div class="section-title">Học vấn</div>
-            <p><strong>Đại học Phan Thiết</strong><br>Ngành: Công nghệ thông tin<br>Trạng thái: Đang theo học</p>
-            <hr style="opacity:0.06;margin:12px 0">
-            <div class="section-title">Kỹ năng</div>
-            <div>
-              <span class="skill">HTML/CSS</span>
-              <span class="skill">JavaScript</span>
-              <span class="skill">C# / Selenium</span>
-              <span class="skill">ADB / Android</span>
-              <span class="skill">Git</span>
+    <header class="top-header">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:0386167884"></i> 📲0386167884</a>
+                <br>
+                <span class="separator"></span>
+                <a href="hotanhuy168@gmail.com"><i class="far fa-envelope"></i> hotanhuy168@gmail.com</a>
             </div>
-            <hr style="opacity:0.06;margin:12px 0">
-            <div class="section-title">Mạng xã hội</div>
-            <p style="font-size:13px;color:rgba(230,238,248,0.7)">Bạn có thể thêm link GitHub, LinkedIn hoặc portfolio ở đây.</p>
-          </div>
-        </aside>
-      </div>
+            <div class="language-switcher">
+                <a href="/?lang=vn" title="Viet Nam"><img src="https://vutuananhdev.id.vn/assets/images/language/vn.svg" alt="Viet Nam"></a>
+                <a href="/?lang=us" title="American"><img src="https://vutuananhdev.id.vn/assets/images/language/us.svg" alt="American"></a>
+            </div>
+        </div>
+    </header>
 
-      <div class="footer">© <span id="year"></span> Hồ Tấn Huy — Đại học Phan Thiết</div>
-    </div>
-  </div>
+    <nav class="main-nav" id="main-nav">
+        <div class="container">
+            <a href="https://tanhuy1.id.vn/index" class="logo">
+                <img style="border-radius: 40%;" src=""alt="Logo">
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Trang chủ</a></li>
+                <li class="nav-item"><a href="https://tanhuy1.id.vn" class="nav-link">Giới thiệu</a></li>
+               
+                <li class="nav-item"><a href="#blog" class="nav-link">Bài viết</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Liên hệ</a></li>
+            </ul>
+            <a href="http://zalo.me/0927013848" class="btn btn-primary btn-nav">Đặt lịch <i class="fas fa-arrow-right"></i></a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="far fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-  <script>
-    // Set year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <main>
+        <section  data-aos="fade-up" id="home" class="hero-section" >
+            <div class="hero-background"></div>
+            <div data-aos="fade-up" class="container hero-content">
+                <h1>Hồ Tấn Huy</h1>
+                <h2> Giải Pháp Công Nghệ </h2>
+                <p>Chuyên gia hệ thống, ứng dụng di động và các giải pháp chuyển đổi số toàn diện.</p>
+                <a href="#about" class="btn btn-primary">Tìm hiểu thêm</a>
+            </div>
+        </section>
+        <section data-aos="fade-up" id="about" class="about-section">
+            <div class="container">
+                
+                <div data-aos="fade-up" class="about-image-column">
+                    <img src="">
+                </div>
+                <div data-aos="fade-up" class="about-content-column">
+                    <p class="section-subtitle">Về chúng tôi</p>
+                    <h2 class="section-title">Lập trình viên Web & App</h2>
+                    <p class="about-text">
+                        <strong>Hồ Tấn Huy (Huy Cyber)</strong> – chuyên nhận phát triển website, ứng dụng di động và phần mềm theo yêu cầu. Với kinh nghiệm thực chiến, tôi mang đến các giải pháp công nghệ hiện đại, phù hợp cho cá nhân, doanh nghiệp và startup.
+                    </p>
+                    <p data-aos="fade-right" class="about-text">
+                        Ngoài ra, tôi còn trực tiếp giảng dạy các khóa học lập trình từ cơ bản đến nâng cao (HTML, CSS, JavaScript, ReactJS, PHP, Laravel, Flutter...), giúp học viên nhanh chóng nắm bắt kiến thức và áp dụng vào công việc.
+                    </p>
+                    <div data-aos="fade-left" class="about-features">
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Tư vấn giải pháp công nghệ</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Phát triển sản phẩm theo yêu cầu</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Đào tạo lập trình thực chiến</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Hỗ trợ chuyển đổi số</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // Tiny type/rotate effect for subtitle
-    const phrases = ['Phát triển phần mềm & Web','Tự động hóa & Testing','Học hỏi công nghệ mới','Xây dựng sản phẩm thực tế'];
-    let i = 0; let j = 0; let forward = true; const typedEl = document.getElementById('typed');
-    function tick(){
-      const current = phrases[i];
-      if(forward){
-        j++;
-        if(j <= current.length){ typedEl.textContent = current.slice(0,j); }
-        if(j === current.length) { forward = false; setTimeout(tick,1200); return; }
-      } else {
-        j--;
-        if(j >= 0) { typedEl.textContent = current.slice(0,j); }
-        if(j === 0){ forward = true; i = (i+1) % phrases.length; }
-      }
-      setTimeout(tick, 80);
+        <section id="courses" class="courses-section">
+            <div  data-aos="fade-right" class="container">
+                 <p class="section-subtitle">Thông Tin Phổ Biến Về Sinh Viên</p>
+                 <h2 class="section-title">Khám Phá Nổi Bật Của Sinh Viên</h2>
+                 <div class="swiper courses-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="course-card">
+                                <br>
+                                <img style="border-radius: 40%;text-align: center; margin: 0 auto;" src="" width="40%">
+                                <div class="course-info">
+                                    <h3 class="course-title" style="text-align: center;" ></h3>
+                                    <p class="course-desc" style="text-align: center;" > Cựu học sinh của trường THPT Nguyễn Thị Minh Khai.</p>
+                                    
+                                   <button  class="nutclick" onclick = "window.location.href='https://upt.edu.vn/tuyen-sinh-dai-hoc/tu-van-huong-nghiep-cho-hoc-sinh-thpt-phan-thiet/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&gidzl=vXSS8b6Vj6Nc01GXK82sOE03429CYh9Zgbr0T4tSiZN-31KdHOlYDgHP4IOHYUPcgmr0BMA2iP5pLfQ_OW'">
+                                        Xem Chi Tiết</button>  
+                                </div>
+                            </div>
+                        </div>
+                         
+                        
+                          <div class="swiper-slide">
+                            <div class="course-card">
+                                <br>
+                                <img style="border-radius: 40%;text-align: center; margin: 0 auto;" src="https://fit.upt.edu.vn/wp-content/uploads/2025/05/500708864_1131689002316867_5969427054134952868_n-1536x865.jpg" width="40%">
+                                <div class="course-info">
+                                    <h3 class="course-title" style="text-align: center;" >Sinh Viên Hồ Tấn Huy – LỚP K16THO1</h3>
+                                    <p class="course-desc" style="text-align: center;" > NGÀNH CÔNG NGHỆ THÔNG TIN NHẬN HỌC BỔNG “CHẮP CÁNH ƯỚC MƠ” DO ANANTARA MUINE RESORT TÀI TRỢ</p>
+                                    <br><br>
+                                   <button  class="nutclick" onclick = "window.location.href=''">
+                                        Xem Chi Tiết</button>  
+                                </div>
+                            </div>
+                        </div>
+
+                           <div class="swiper-slide">
+                            <div class="course-card">
+                                <br>
+                                <img style="border-radius: 40%;text-align: center; margin: 0 auto;" src="https://anhtu1.id.vn/img/anhtu3.jpg" width="40%">
+                                <div class="course-info">
+                                    <h3 class="course-title" style="text-align: center;" ></h3>
+                                    <p class="course-desc" style="text-align: center;" > Cựu học sinh của trường THPT Nguyễn Thị Minh Khai.</p>
+                                    
+                                     <button  class="nutclick" onclick = "window.location.href='https://upt.edu.vn/tuyen-sinh-dai-hoc/tu-van-huong-nghiep-cho-hoc-sinh-thpt-phan-thiet/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&gidzl=vXSS8b6Vj6Nc01GXK82sOE03429CYh9Zgbr0T4tSiZN-31KdHOlYDgHP4IOHYUPcgmr0BMA2iP5pLfQ_OW'">
+                                        Xem Chi Tiết</button>  
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                 </div>
+            </div>
+        </section>
+
+<!-- Thêm SwiperJS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".courses-slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true, // chạy vòng lặp
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
     }
-    tick();
+  });
+</script>
 
-    function copyEmail(){
-      const email = 'ho.tan.huy@example.com';
-      navigator.clipboard?.writeText(email).then(()=>{
-        alert('Đã sao chép email: ' + email);
-      }).catch(()=>{ alert('Không thể sao chép — vui lòng sao chép thủ công: ' + email)});
-    }
-  </script>
+
+        
+
+     <section data-aos="fade-on" class="blog-section">
+        <div style="background: #1c2b52;
+                    border-radius: 20px;
+                    padding: 20px;
+                    margin: 0 auto; 
+                    max-width: 800px; 
+                    border-radius: 30px; 
+                    text-align: center;
+                    color: white;">
+                <br><h3>🤖 Nghiên Cứu Và Tạo Ứng Dụng Tự Động Hóa <br>Click Website<br><br></h3>
+                <h4  data-aos="fade-left">⚡ Hỗ Trợ Click Làm 1 Thao Tác Giống Nhau</h4>
+                <p  data-aos="fade-right">
+                🚀 Ứng dụng giúp tiết kiệm thời gian ⏱️ Giảm thao tác lặp lại 🔄
+                <br>Tăng hiệu quả công việc 💼 Và trải nghiệm người dùng 🌐.  
+                <br>🎯 Phù hợp cho sinh viên 👨‍🎓👩‍🎓, lập trình viên 👨‍💻👩‍💻 
+                    và cả doanh nghiệp 🏢 <br>Cần tối ưu công việc lặp đi lặp lại.
+                </p>
+                <h3  data-aos="fade-on" >👉 Dự Án Thực Chiến</h3>
+                 <article class="blog-card">
+                        <img style="width: 500px; margin: 0 auto;" src="https://anhtx1u11.github.io/admintuupt.github.io/A-Main/logotu-fotor-20250509173456.png">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fal fa-clock"></i> 20/08/2025</span>
+                                <span><i class="fas fa-eye"></i> 1.2k lượt xem</span>
+                            </div>
+                            <h3 class="blog-title">Tool Kiếm Tiền Qua Golike - Auto Click Phone Qua ADB</h3>
+                            <a href="https://bom.so/fbtu" class="blog-readmore">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                     <button data-aos="fade-down" class="nutclick" onclick="window.location.href='nckh'">
+                    📖 Xem Chi Tiết
+                </button>
+             <br>
+        </div>
+            
+    </section>
+
+        
+        <section data-aos="flip-left" class="blog-section">
+           <div style="background: #1c2b52;
+                    margin: 0 auto; 
+                    max-width: 800px; 
+                    border-radius: 30px; 
+                    text-align: center;
+                    color: white;">
+                <br>
+            <div style="text-align: center;border-radius: 20px;margin: 0 auto;" >
+                <h2 data-aos="zoom-in" style="color: green;">📚 Các Nghiên Cứu Khoa Học Đang Thực Hiện 🔍</h3><br>
+                <h3>✍️ Giới thiệu đề tài NCKH ✍️</h2>
+                <h4>🎓 Đề tài: "Hệ thống điểm danh sinh viên qua GPS 🌍 và Bot Zalo 🤖 nhắc lịch"</h1>
+                <button data-aos="fade-down" class="nutclick" onclick="window.location.href='nckh'">
+                    📖 Xem Chi Tiết
+                </button>
+            </div>
+            <br>
+            </div>
+        </section>
+
+
+           
+        <section id="blog" class="blog-section">
+            <div data-aos="fade-up" class="container">
+                <p class="section-subtitle">Tin tức & Blogs</p>
+                <h2 class="section-title">Bài viết gần đây</h2>
+                 <div class="blog-grid">
+                    <article class="blog-card">
+                        <img src="" alt="Blog post image" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fal fa-clock"></i> 15/07/2025</span>
+                                <span><i class="fas fa-eye"></i> 1.2K lượt xem</span>
+                            </div>
+                            <h3 class="blog-title"></h3>
+                            <a href="https://anhtu1.id.vn/A-Main/napthengay/" class="blog-readmore">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                
+                     <article class="blog-card">
+                        <img src="" alt="Blog post image" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fal fa-clock"></i> 10/07/2025</span>
+                                <span><i class="fas fa-eye"></i> 980 lượt xem</span>
+                            </div>
+                            <h3 class="blog-title">Website Xem Tử Vi Cơ Bản</h3>
+                            <a href="https://anhtu1.id.vn/A-Main/napthengay/tuvi" class="blog-readmore">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                     <article class="blog-card">
+                        <img src="" alt="Blog post image" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fal fa-clock"></i> 05/07/2025</span>
+                                <span><i class="fas fa-eye"></i> 2.1K lượt xem</span>
+                            </div>
+                            <h3 class="blog-title">SCR Code C# Test Gmail SLL</h3>
+                            <a href="#" class="blog-readmore">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer id="contact" class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-column about-us">
+                    <img src="https://vutuananhdev.id.vn/datafiles/72730/upload/images/logo/chibi_2(2).png" alt="Chibi logo" class="footer-logo">
+                    <p>🚀 Chúng tôi cam kết mang đến những giải pháp tối ưu, 🌐 luôn đổi mới theo xu hướng hiện đại để giúp bạn 💡 nâng cao năng lực và 📈 bắt kịp sự phát triển không ngừng của công nghệ.</p>
+                    <div class="social-media">
+                        <a href="" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="" target="_blank" aria-label="Zalo"><i class="fab fa-viber"></i></a> <a href="" target="_blank" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="" target="_blank" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column quick-links">
+                    <h4 class="footer-title">Liên kết nhanh</h4>
+                    <ul>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        
+                        <li><a href="#blog">Bài viết</a></li>
+                        <li><a href="https://tanhuy1.id.vn">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-info-footer">
+                     <h4 class="footer-title">Thông tin liên hệ</h4>
+                     <p>Đăng ký để nhận được cập nhật và tin tức mới nhất của chúng tôi.</p>
+                     <form class="newsletter-form">
+                        <input type="email" placeholder="Địa chỉ email...">
+                        <button type="submit" aria-label="Đăng ký">Đăng ký</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© Bản quyền nội dung thuộc về <br> <a href="https://tanhuy1.id.vn">Hồ Tấn Huy- Lập trình viên Full-Stack</a></p>
+                <p>Thiết kế Website bởi K16THO0021<br> - Nguyễn Anh Tú -</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top"><i class="far fa-arrow-up"></i></a>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
+<script>
+  AOS.init();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
